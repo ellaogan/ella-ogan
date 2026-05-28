@@ -1,5 +1,5 @@
 :root {
-  --bg: #fafafa;
+  --bg: #ffffff;
   --text: #2400ff;
   --muted: #2400ff;
 }
@@ -66,10 +66,16 @@ body {
   background: #fff;
 }
 
+.about-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+}
+
 .about-image {
-  width: 100%;
+  width: 180px;
+  flex-shrink: 0;
   display: none;
-  margin-bottom: 14px;
 }
 
 .home-image {
@@ -110,6 +116,41 @@ h1 {
   display: block;
   object-fit: contain;
   height: auto;
-  background: #f2f2f2;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 28px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
 }
 

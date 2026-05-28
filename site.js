@@ -40,8 +40,28 @@
       img.src = `assets/artwork/${filename}`;
       img.alt = filenameToTitle(filename);
       img.loading = "lazy";
+      img.addEventListener("click", () => openLightbox(img.src, img.alt));
       card.append(img);
       grid.appendChild(card);
+    });
+  }
+
+  function openLightbox(src, alt) {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightbox.classList.add("open");
+  }
+
+  const lightbox = document.getElementById("lightbox");
+  const closeBtn = document.getElementById("lightbox-close");
+  if (lightbox) {
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target === closeBtn) {
+        lightbox.classList.remove("open");
+      }
     });
   }
 
