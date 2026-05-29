@@ -215,3 +215,60 @@ h1 {
   line-height: 1;
 }
 
+/* ── Mobile ── */
+@media (max-width: 600px) {
+
+  /* Stack home layout vertically */
+  .intro-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 32px auto;
+    padding: 16px;
+  }
+
+  /* Image full width on mobile */
+  .home-image {
+    width: min(320px, 88vw);
+  }
+
+  /* Name words sit below image, side by side */
+  .home-name {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  /* Reorder: image on top, then names side by side below */
+  .home-image-wrap {
+    order: -1;
+  }
+
+  /* About page stacks vertically */
+  .about-card {
+    flex-direction: column;
+    margin: 32px auto;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .about-image {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Gallery goes to 2 columns on mobile */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  /* Tighten up header */
+  .nav-wrap {
+    min-height: 52px;
+  }
+
+  /* Work title spacing */
+  .work-title {
+    margin-top: 24px;
+  }
+}
+
