@@ -58,12 +58,22 @@ body {
   font-weight: 600;
 }
 
-.intro-card,
 .about-card {
   margin: 64px auto;
   max-width: 720px;
   padding: 28px;
   background: #fff;
+}
+
+.intro-card {
+  margin: 64px auto;
+  max-width: 900px;
+  padding: 28px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
 }
 
 .about-card {
@@ -78,11 +88,42 @@ body {
   display: none;
 }
 
+.home-image-wrap {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
 .home-image {
-  width: min(420px, 70vw);
-  display: none;
-  margin: 10px auto 0;
+  width: min(380px, 55vw);
+  display: block;
   background: #fff;
+  transition: opacity 0.3s ease;
+}
+
+.home-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: #2400ff;
+  mix-blend-mode: multiply;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.home-image-wrap:hover .home-image-overlay {
+  opacity: 0.6;
+}
+
+.home-name {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -0.02em;
 }
 
 h1 {
@@ -91,8 +132,22 @@ h1 {
   font-weight: 600;
 }
 
+/* Fade in on load */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .intro-card {
-  text-align: center;
+  animation: fadeIn 0.8s ease both;
+}
+
+.about-card {
+  animation: fadeIn 0.8s ease both;
+}
+
+.gallery-grid {
+  animation: fadeIn 0.8s ease both;
 }
 
 .work-title {
@@ -109,6 +164,7 @@ h1 {
 
 .art-card {
   background: #fff;
+  overflow: hidden;
 }
 
 .art-card img {
@@ -118,6 +174,11 @@ h1 {
   height: auto;
   background: #fff;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.art-card img:hover {
+  transform: scale(1.03);
 }
 
 /* Lightbox */

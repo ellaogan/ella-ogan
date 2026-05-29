@@ -5,16 +5,18 @@
   setActiveNav(page);
 
   if (page === "home") {
-    const nameEl = document.getElementById("artist-name");
-    if (nameEl) nameEl.textContent = content.name || "";
+    const nameFirst = document.getElementById("name-first");
+    const nameLast = document.getElementById("name-last");
+    if (nameFirst && nameLast && content.name) {
+      const parts = content.name.split(" ");
+      nameFirst.textContent = parts[0] || "";
+      nameLast.textContent = parts[1] || "";
+    }
     const homeImg = document.getElementById("home-image");
-    if (homeImg && content.homeImage) {
-      homeImg.src = `assets/home/${content.homeImage}`;
+    if (homeImg) {
+      homeImg.src = `assets/home/organ_img_white_1.jpg`;
       homeImg.alt = content.name ? `${content.name} artwork` : "Home artwork";
       homeImg.style.display = "block";
-      homeImg.addEventListener("load", () => makeNearBlackTransparent(homeImg), {
-        once: true
-      });
     }
   }
 
