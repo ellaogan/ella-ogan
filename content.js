@@ -6,6 +6,7 @@ window.SITE_CONTENT = {
     "Ella is a visual artist and image maker from South London, now living in Berlin. Her work is an exploration of the industrial and the organic through naive forms, repeating symbols, and soft structures. Rooted in tactile processes and folk imagery, it joins the familiar with the unsettling.",
   artworks: [
     "05.jpg",
+    "075.jpg",
     "1.jpeg",
     "2.jpeg",
     "3.jpeg",
