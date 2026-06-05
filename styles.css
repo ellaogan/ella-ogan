@@ -167,6 +167,10 @@ h1 {
   overflow: hidden;
 }
 
+.art-card:first-child {
+  grid-column: span 2;
+}
+
 .art-card img {
   width: 100%;
   display: block;
