@@ -4,7 +4,7 @@ window.SITE_CONTENT = {
   aboutImage: "about.jpg",
   aboutText:
     "Ella is a visual artist and image maker from South London, now living in Berlin. Her work is an exploration of the industrial and the organic through naive forms, repeating symbols, and soft structures. Rooted in tactile processes and folk imagery, it joins the familiar with the unsettling.",
-  babyRow: ["baby1.jpg", "baby2.jpg", "baby3.jpg"],
+  babyRow: ["baby1.jpg", "baby2-v2.jpg", "baby3.jpg"],
   artworks: [
     "05.jpg",
     "075.jpg",
