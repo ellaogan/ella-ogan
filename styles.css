@@ -312,10 +312,13 @@ h1 {
     margin-bottom: 16px;
   }
 
-  .art-card:first-child,
-  .art-card:nth-child(2),
-  .art-card:nth-child(3) {
-    grid-column: span 1;
+  /* Reset desktop grid-column/row positioning so featured cards
+     flow normally in the 2-column mobile grid */
+  .gallery-grid .art-card:first-child,
+  .gallery-grid .art-card:nth-child(2),
+  .gallery-grid .art-card:nth-child(3) {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .art-card {
