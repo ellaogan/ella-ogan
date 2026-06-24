@@ -32,6 +32,24 @@
   }
 
   if (page === "work") {
+    const babyRowEl = document.getElementById("baby-row");
+    const babyImages = Array.isArray(content.babyRow) ? content.babyRow : [];
+    if (babyRowEl) {
+      babyImages.forEach((filename) => {
+        const card = document.createElement("article");
+        card.className = "art-card baby-card";
+
+        const img = document.createElement("img");
+        img.src = `assets/artwork/${filename}`;
+        img.alt = filenameToTitle(filename);
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.addEventListener("click", () => openLightbox(img.src, img.alt));
+        card.append(img);
+        babyRowEl.appendChild(card);
+      });
+    }
+
     const grid = document.getElementById("gallery-grid");
     const artworks = Array.isArray(content.artworks) ? content.artworks : [];
     artworks.forEach((filename) => {
@@ -42,10 +60,17 @@
       img.src = `assets/artwork/${filename}`;
       img.alt = filenameToTitle(filename);
       img.loading = "lazy";
+      img.decoding = "async";
       img.addEventListener("click", () => openLightbox(img.src, img.alt));
       card.append(img);
       grid.appendChild(card);
     });
+  }
+
+  const footerEl = document.querySelector(".site-footer");
+  if (footerEl) {
+    const year = new Date().getFullYear();
+    footerEl.textContent = `© ${content.name || ""} ${year}`;
   }
 
   function openLightbox(src, alt) {

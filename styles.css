@@ -192,6 +192,28 @@ h1 {
   transform: scale(1.03);
 }
 
+/* Baby row - three images side by side at top of work page */
+.baby-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.baby-row .art-card {
+  background: #fff;
+  overflow: hidden;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: #ccccdd;
+  padding: 18px 0 28px;
+}
+
 /* Lightbox */
 .lightbox {
   display: none;
@@ -269,6 +291,12 @@ h1 {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
+  }
+
+  .baby-row {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
   }
 
   .art-card:first-child,
