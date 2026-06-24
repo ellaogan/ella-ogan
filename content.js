@@ -8,6 +8,7 @@ window.SITE_CONTENT = {
   artworks: [
     "05.jpg",
     "075.jpg",
+    "025.jpg",
     "1.jpeg",
     "2.jpeg",
     "3.jpeg",
@@ -18,7 +19,6 @@ window.SITE_CONTENT = {
     "8.png",
     "9.png",
     "10.png",
-    "025.jpg",
     "11.jpeg",
     "12.jpeg",
     "13.jpeg",
